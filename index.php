@@ -58,12 +58,13 @@ function mostrarEnlaces($enlaces) {
                         <i class="bi bi-arrow-right text-muted"></i>
                     </a>
 <?php
-                  foreach ($enlaces as $enlace) {
+// mostrarEnlaces($enlaces);
+foreach ($enlaces as $enlace) {
 
-                  echo '<a href="https://"' . $enlace[0] . " target="_blank" class="btn btn-outline-dark btn-lg shadow-sm py-3 text-start d-flex align-items-center justify-content-between">
+echo '<a href="' . $enlace[0] . '" target="_blank" class="btn btn-outline-dark btn-lg shadow-sm py-3 text-start d-flex align-items-center justify-content-between">
                         <span><i class="bi bi-book me-2"></i> ' . $enlace[1] .'</span>
                         <i class="bi bi-arrow-right text-muted"></i>
-                    </a>'
+                    </a>';
     }
 ?>
 
