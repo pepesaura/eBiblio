@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="es">
 <?php
 $enlaces = [
-    ['https://www.php.net', 'Documentación de PHP'],
-    ['https://www.google.com', 'Google'],
-    ['https://www.wikipedia.org', 'Wikipedia']
+    ['https://icons.getbootstrap.com/', 'Bootstrap Icons'],
+    ['https://getbootstrap.com/docs/6.0/getting-started/install/', 'Explore Bootstrap docs'],
+    ['https://getbootstrap.com/docs/6.0/examples/starter-template/', 'Starter template'],
+    ['https://getbootstrap.com/docs/6.0/examples/', 'Download examples'],
+    ['https://blog.getbootstrap.com/', 'Blog']
+
 ];
+$title = "Enlaces con Bootstrap";
+$description = "mis experiencias online";
+$image = "favicon.ico";
+$url_completa = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$author = "tr3x.es";
+
 
 function mostrarEnlaces($enlaces) {
     foreach ($enlaces as $enlace) {
@@ -14,18 +21,20 @@ function mostrarEnlaces($enlaces) {
 }
 
 ?>
+<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bibliotecas digitales</title>
-    <meta name="description" content="mis bibliotecas online">
-    <meta name="author" content="sunlight_zone">
+    <title><?php echo $title; ?></title>
+    <meta name="description" content="<?php echo $description; ?>">
+    <meta name="author" content="<?php echo $author; ?>">
 
     <!-- 2. Etiquetas Open Graph (Para vistas previas en Telegram, WhatsApp, Facebook, etc.) -->
-    <meta property="og:title" content="Bibliotecas digitales">
-    <meta property="og:description" content="mis bibliotecas online">
-    <meta property="og:image" content="https://ebiblio.moozak.es/e2blio.jpg"> <!-- URL absoluta de tu imagen -->
-    <meta property="og:url" content="https://ebiblio.moozak.es/index.html"> <!-- URL de tu web -->
+    <meta property="og:title" content="<?php echo $title; ?>">
+    <meta property="og:description" content="<?php echo $description; ?>">
+    <meta property="og:image" content="<?php echo $image; ?>"> <!-- URL absoluta de tu imagen -->
+    <meta property="og:url" content="<?php echo $url_completa; ?>"> <!-- URL de tu web -->
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/png" href="favicon.png">
@@ -47,26 +56,20 @@ function mostrarEnlaces($enlaces) {
                     <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow-sm" style="width: 80px; height: 80px; font-size: 2rem;">
                         <i class="bi bi-chat-left-quote-fill"></i>
                     </div>
-                    <h1 class="h3 fw-bold text-dark">Bibliotecas digitales</h1>
-                    <p class="text-muted">...</p>
+                    <h1 class="h3 fw-bold text-dark"><?php echo $title; ?></h1>
+                    <p class="text-muted"><?php echo $description; ?></p>
                 </div>
-
-                <!-- Lista de los 6 Enlaces -->
+<?php
+foreach ($enlaces as $enlace) {
+?>
                 <div class="d-grid gap-3">
-                    <a href="https://murcia.ebiblio.es" target="_blank" class="btn btn-outline-dark btn-lg shadow-sm py-3 text-start d-flex align-items-center justify-content-between">
-                        <span><i class="bi bi-book me-2"></i> eBiblio Murcia</span>
+                    <a href="<?php echo $enlace[0]; ?>" target="_blank" class="btn btn-outline-dark btn-lg shadow-sm py-3 text-start d-flex align-items-center justify-content-between">
+                        <span><i class="bi bi-book me-2"></i> <?php echo $enlace[1]; ?></span>
                         <i class="bi bi-arrow-right text-muted"></i>
                     </a>
 <?php
-// mostrarEnlaces($enlaces);
-foreach ($enlaces as $enlace) {
-
-echo '<a href="' . $enlace[0] . '" target="_blank" class="btn btn-outline-dark btn-lg shadow-sm py-3 text-start d-flex align-items-center justify-content-between">
-                        <span><i class="bi bi-book me-2"></i> ' . $enlace[1] .'</span>
-                        <i class="bi bi-arrow-right text-muted"></i>
-                    </a>';
     }
-?>
+    ?>
 
                 </div>
 
