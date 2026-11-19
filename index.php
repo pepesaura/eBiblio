@@ -1,1 +1,84 @@
-index
+<!DOCTYPE html>
+<html lang="es">
+<?php
+$enlaces = [
+    ['https://www.php.net', 'Documentación de PHP'],
+    ['https://www.google.com', 'Google'],
+    ['https://www.wikipedia.org', 'Wikipedia']
+];
+
+function mostrarEnlaces($enlaces) {
+    foreach ($enlaces as $enlace) {
+        echo '<a href="' . $enlace[0] . '">' . $enlace[1] . '</a><br>';
+    }
+}
+
+?>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotecas digitales</title>
+    <meta name="description" content="mis bibliotecas online">
+    <meta name="author" content="sunlight_zone">
+
+    <!-- 2. Etiquetas Open Graph (Para vistas previas en Telegram, WhatsApp, Facebook, etc.) -->
+    <meta property="og:title" content="Bibliotecas digitales">
+    <meta property="og:description" content="mis bibliotecas online">
+    <meta property="og:image" content="https://ebiblio.moozak.es/e2blio.jpg"> <!-- URL absoluta de tu imagen -->
+    <meta property="og:url" content="https://ebiblio.moozak.es/index.html"> <!-- URL de tu web -->
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos de Bootstrap (opcional para darle mejor estilo) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Contenido Principal -->
+    <main class="container my-auto py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5 text-center">
+                
+                <!-- Encabezado / Perfil ficticio -->
+                <div class="mb-4">
+                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow-sm" style="width: 80px; height: 80px; font-size: 2rem;">
+                        <i class="bi bi-chat-left-quote-fill"></i>
+                    </div>
+                    <h1 class="h3 fw-bold text-dark">Bibliotecas digitales</h1>
+                    <p class="text-muted">...</p>
+                </div>
+
+                <!-- Lista de los 6 Enlaces -->
+                <div class="d-grid gap-3">
+                    <a href="https://murcia.ebiblio.es" target="_blank" class="btn btn-outline-dark btn-lg shadow-sm py-3 text-start d-flex align-items-center justify-content-between">
+                        <span><i class="bi bi-book me-2"></i> eBiblio Murcia</span>
+                        <i class="bi bi-arrow-right text-muted"></i>
+                    </a>
+<?php
+                  foreach ($enlaces as $enlace) {
+
+                  echo '<a href="https://"' . $enlace[0] . " target="_blank" class="btn btn-outline-dark btn-lg shadow-sm py-3 text-start d-flex align-items-center justify-content-between">
+                        <span><i class="bi bi-book me-2"></i> ' . $enlace[1] .'</span>
+                        <i class="bi bi-arrow-right text-muted"></i>
+                    </a>'
+    }
+?>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="text-center py-4 text-muted small">
+        <p class="mb-0">&copy; 2026 - Creado con Bootstrap 5</p>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
