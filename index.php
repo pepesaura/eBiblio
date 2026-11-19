@@ -1,11 +1,10 @@
 <?php
 $enlaces = [
-    ['https://icons.getbootstrap.com/', 'Bootstrap Icons'],
-    ['https://getbootstrap.com/docs/6.0/getting-started/install/', 'Explore Bootstrap docs'],
-    ['https://getbootstrap.com/docs/6.0/examples/starter-template/', 'Starter template'],
-    ['https://getbootstrap.com/docs/6.0/examples/', 'Download examples'],
-    ['https://blog.getbootstrap.com/', 'Blog']
-
+    ['book', 'https://icons.getbootstrap.com/', 'Bootstrap Icons'],
+    ['book', 'https://getbootstrap.com/docs/6.0/getting-started/install/', 'Explore Bootstrap docs'],
+    ['balloon', 'https://getbootstrap.com/docs/6.0/examples/starter-template/', 'Starter template'],
+    ['balloon','https://getbootstrap.com/docs/6.0/examples/', 'Download examples'],
+    ['award','https://blog.getbootstrap.com/', 'Blog']
 ];
 $title = "Enlaces con Bootstrap";
 $description = "mis experiencias online";
@@ -63,10 +62,11 @@ function mostrarEnlaces($enlaces) {
 foreach ($enlaces as $enlace) {
 ?>
                 <div class="d-grid gap-3">
-                    <a href="<?php echo $enlace[0]; ?>" target="_blank" class="btn btn-outline-dark btn-lg shadow-sm py-3 text-start d-flex align-items-center justify-content-between">
-                        <span><i class="bi bi-book me-2"></i> <?php echo $enlace[1]; ?></span>
-                        <i class="bi bi-arrow-right text-muted"></i>
-                    </a>
+                <a href="<?php echo $enlace[1]; ?>" target="_blank" class="btn btn-outline-dark btn-lg shadow-sm py-3 text-start d-flex align-items-center justify-content-between">
+                    <span><i class="bi bi-<?php echo $enlace[0]; ?> me-2"></i> <?php echo $enlace[2]; ?></span>
+                    <i class="bi bi-arrow-right text-muted"></i>
+                </a>
+
 <?php
     }
     ?>
