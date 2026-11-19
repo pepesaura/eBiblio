@@ -1,3 +1,3 @@
 # eBiblio
 menú con Bootstrap
-revisar los iconos y los colores
+- revisar los iconos y los colores
